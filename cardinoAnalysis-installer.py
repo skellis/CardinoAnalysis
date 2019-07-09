@@ -50,7 +50,7 @@ def installMatplotlib():
 			os.system("pip install -U matplotlib==3.1.0")
 	except ImportError:
 		print "matplotlib is not installed. Installing version 3.1.0:"
-		os.system("pip install -U matplotlib==2.2.3")
+		os.system("pip install -U matplotlib==3.1.0")
 
 
 
