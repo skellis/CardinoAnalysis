@@ -3,12 +3,12 @@ import numpy as np
 #import sys
 
 #np.set_printoptions(threshold=sys.maxsize)
-
+dataFilePath="2000_01_01 00_00_00 CARDINO.csv"
 
 #load the ringdown time constants "Taus" in microseconds
-tau_Data=ut.loadCardinoData("2000_01_01 00_00_00 CARDINO.csv",columns="Taus")
+tau_Data=ut.loadCardinoData(dataFilePath,columns="Taus")
 #load the time stamp data
-time_Data=ut.loadCardinoData("2000_01_01 00_00_00 CARDINO.csv",columns="TimeStamp")
+time_Data=ut.loadCardinoData(dataFilePath,columns="TimeStamp")
 #format the time into a suitable timeseries array in units of seconds
 time_Series=ut.formatTime(time_Data)
 
@@ -16,7 +16,7 @@ time_Series=ut.formatTime(time_Data)
 #The red ringdown times are in the first two columns of tau_Data
 redTau_Data=tau_Data[:,0:2]
 #load the flags for zeroing th red channels
-redState=ut.loadCardinoData("2000_01_01 00_00_00 CARDINO.csv",columns="Red State")
+redState=ut.loadCardinoData(dataFilePath,columns="Red State")
 #get the median values for each zeroing event on the red channels
 redZeros=ut.getZeroingAvg(redTau_Data, redState)
 #Use the red zeroing flags to determine which zeroing we should use for each time point.
@@ -32,7 +32,7 @@ epRed_norm=ut.selectZeroState(epRed,redState)
 #The blue ringdown times are in the second two columns of tau_Data
 blueTau_Data=tau_Data[:,2:4]
 #load the flags for zeroing th blue channels
-blueState=ut.loadCardinoData("2000_01_01 00_00_00 CARDINO.csv",columns="Blue State")
+blueState=ut.loadCardinoData(dataFilePath,columns="Blue State")
 #get the median values for each zeroing event on the blue channels in units of meters
 blueZeros=ut.getZeroingAvg(blueTau_Data, blueState)
 #Use the red zeroing flags to determine which zeroing we should use for each time point.

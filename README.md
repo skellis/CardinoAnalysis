@@ -1,1 +1,7 @@
 # Cardino_Analysis
+
+This is a suit for  set of python scripts for analyzing the data from the CARDINO trace nitrogenous gas detector. https://www.ucc.ie/en/eri/projects/caribic/
+
+if you are a python user the you probably already have working versions of numpy and matplotlib installed. If not run 'python get-pip.py' and then 'python cardinoAnalysis-installer.py'. Then you can run exampleCardinoAnalysis.py to begin. To process your own data you will want to write a short .py file similar to exampleCardinoAnalysis.py where dataFilePath has been changed to your desired .csv file.
+
+utilities.py contains the suit of modules which perform the brunt of the calculation. They are modular so each can be repurposed to do other tasks. exampleCardinoAnalysis.py is a good place to start for understanding how each module can be implemented. What the program does is load data out of a .csv file (example included). The timestamp is formatted from a string to an array. The proper zeroing flags are loaded. The median zeroing ringdown time is selected for each zeroing event. The correct zeroing value is indexed to each timepoint. Epsilon is calculated as Epsilon=(1/Taui-1/Tau0)/C. The data that is acquired during the zeroing is discarded. 
