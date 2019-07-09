@@ -27,13 +27,13 @@ def installNumpy():
 		import numpy as np
 		npversion= np.version.version
 		if npversion == "1.16.4":
-			print "numpy version is up to date."
+			print("numpy version is up to date.")
 		else:
-			print "scipy version is up not preferable for this software. Installing version 1.16.4:"
+			print("scipy version is up not preferable for this software. Installing version 1.16.4:")
 			os.system("pip install -U numpy==1.16.4")
 
 	except ImportError:
-		print "numpy is not installed. Installing version 1.16.4:"
+		print("numpy is not installed. Installing version 1.16.4:")
 		os.system("pip install -U numpy==1.16.4")
 
 
@@ -44,17 +44,16 @@ def installMatplotlib():
 		import matplotlib
 		matplotlibversion= matplotlib.__version__
 		if matplotlibversion == "3.1.0":
-			print "matplotlib version is up to date."
+			print("matplotlib version is up to date.")
 		else:
-			print "matplotlib version is up not preferable. Installing version 3.1.0:"
+			print("matplotlib version is up not preferable. Installing version 3.1.0:")
 			os.system("pip install -U matplotlib==3.1.0")
 	except ImportError:
-		print "matplotlib is not installed. Installing version 3.1.0:"
+		print("matplotlib is not installed. Installing version 3.1.0:")
 		os.system("pip install -U matplotlib==3.1.0")
 
 
 
 installNumpy()
 installMatplotlib()
-installpyDAQmx()
-print "-If all packages installed correctly run 'python exampleCardinoAnalysis.py
+print("-If all packages installed correctly run 'python exampleCardinoAnalysis.py")
